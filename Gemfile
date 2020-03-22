@@ -44,6 +44,8 @@ group :development do
   gem 'spring-watcher-listen', '~> 2.0.0'
   # Help to kill N+1 queries and unused eager loading
   gem 'bullet', '~> 6.1'
+  # Memory profiler for ruby
+  gem 'memory_profiler', '~> 0.9.14', require: false
 end
 
 group :test do
