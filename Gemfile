@@ -33,6 +33,8 @@ group :development, :test do
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
   # RuboCop configuration used at Airbnb
   gem 'rubocop-airbnb', '~> 3.0', '>= 3.0.2', require: false
+  # Security vulnerability scanner
+  gem 'brakeman', '~> 4.8', require: false
 end
 
 group :development do
