@@ -1,0 +1,4 @@
+# We use this file to configure the database for test run in Travis CI
+test:
+  adapter: postgresql
+  database: math115_travis_ci_test
