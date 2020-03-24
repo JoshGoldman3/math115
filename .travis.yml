@@ -1,20 +1,13 @@
 language: ruby
 rvm:
   - 2.7.0
-before_install:
-  - sudo apt-get update
-  - sudo apt-get --yes remove postgresql\*
-  - sudo apt-get install -y postgresql-12 postgresql-client-12
-  - sudo cp /etc/postgresql/{9.6,12}/main/pg_hba.conf
-  - sudo service postgresql restart 12
+cache:
+  bundle: true
 before_script:
-  - psql --version
   - cp config/database.yml.travis config/database.yml
   - psql -c 'create database math115_travis_ci_test;' -U postgres
 script:
   - bundle exec rails db:migrate RAILS_ENV=test
   - bundle exec rspec
-services:
-  - postgresql
 addons:
-  postgresql: "12.2"
+  postgresql: "9.6"
