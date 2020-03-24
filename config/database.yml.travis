@@ -2,4 +2,3 @@
 test:
   adapter: postgresql
   database: math115_travis_ci_test
-  port: 5433
