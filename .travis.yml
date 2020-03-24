@@ -8,7 +8,7 @@ addons:
     packages:
       - postgresql-12
       - postgresql-client-12
-before_scripts:
+before_script:
   - cp config/database.yml.travis config/database.yml
   - psql -c 'create database math115_travis_ci_test;' -U postgres
 script:
