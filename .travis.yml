@@ -1,1 +1,13 @@
 language: ruby
+rvm:
+  - 2.7.0
+cache:
+  bundler: true
+before_script:
+  - cp config/database.yml.travis config/database.yml
+  - psql -c 'create database math115_travis_ci_test;' -U postgres
+script:
+  - bundle exec rails db:migrate RAILS_ENV=test
+  - bundle exec rails test
+addons:
+  postgresql: "9.6"
